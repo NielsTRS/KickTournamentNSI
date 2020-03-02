@@ -1,12 +1,12 @@
-let ctx = document.getElementById("ctx").getContext("2d");
+let game = document.getElementById("game").getContext("2d");
 
 let socket = io();
 socket.on('newPositions', function (data) {
-    ctx.clearRect(0, 0, 500, 500);
+    game.clearRect(0, 0, 500, 500);
     for (let i = 0; i < data.length; i++) {
         let img = new Image();
-        img.src = '/public/assets/images/avatar.png';
-        ctx.drawImage(img, data[i].x, data[i].y, data[i].width, data[i].height)
+        img.src = '/public/assets/images/perso.png';
+        game.drawImage(img, data[i].x, data[i].y, data[i].width, data[i].height)
     }
 });
 

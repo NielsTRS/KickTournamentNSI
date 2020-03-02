@@ -1,0 +1,41 @@
+/* Footer */
+
+#footer {
+  display: flex;
+  flex-wrap: wrap;
+  @include padding(5em, 5em);
+  margin: 0 0 (_size(element-margin) * 1.5) (_size(element-margin) * -1);
+
+  > * {
+    width: calc(50% - #{_size(element-margin)});
+    margin-left: _size(element-margin);
+  }
+
+  @include breakpoint('<=large') {
+    @include padding(4em, 4em);
+  }
+
+  @include breakpoint('<=medium') {
+    @include padding(4em, 3em);
+    display: block;
+    margin: 0 0 (_size(element-margin) * 1.5) 0;
+
+    > * {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: (_size(element-margin) * 1.5);
+    }
+  }
+
+  @include breakpoint('<=small') {
+    @include padding(3em, 2em);
+  }
+
+  @include breakpoint('<=xsmall') {
+    @include padding(3em, 1.5em);
+  }
+
+  @include breakpoint('<=xsmall') {
+    @include padding(2.5em, 1em);
+  }
+}
