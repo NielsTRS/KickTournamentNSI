@@ -27,20 +27,20 @@
             <h2>Tchatez avec d'autres joueurs</h2>
             <form action="#" method="post">
                 <div class="row gtr-uniform">
-                    <div class="col-6 col-12-xsmall">
-                        <input name="pseudo" placeholder="Pseudo" type="text" value=""/>
-                    </div>
                     <div class="col-12">
-                        <textarea name="message" placeholder="Message"
-                                  rows="2"></textarea>
-                    </div>
-                    <div class="col-12">
-                        <ul class="actions">
-                            <li><input class="primary" type="submit" value="Envoyer"/></li>
-                        </ul>
+                        <input name="message" id="message" placeholder="Texte" type="text" value=""/>
+                        <button class="primary">Envoyer</button>
                     </div>
                 </div>
             </form>
+        </section>
+        <section class="main">
+            <h2>Messages</h2>
+            <div class="row gtr-uniform">
+                <div class="col-12">
+                    <ul id="messages"></ul>
+                </div>
+            </div>
         </section>
     </div>
 
@@ -50,5 +50,7 @@
 </div>
 </body>
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 <script src="public/assets/js/script.js"></script>
 </html>

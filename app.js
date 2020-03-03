@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var serv = require('http').Server(app);
+var serv = require('http').createServer(app);
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
@@ -64,7 +64,9 @@ io.on('connection', function (socket) {
             player.pressingDown = data.state;
     });
 
-
+    socket.on('tchat', function (msg) {
+        io.emit('tchat', msg);
+    });
 });
 
 setInterval(function () {
