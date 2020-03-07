@@ -6,12 +6,9 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
 app.use('/public', express.static(__dirname + '/public'));
-console.log("Server started.");
 
-var srv = app.listen(2000, function () {
-        var host = srv.address().address;
-        var port = srv.address().port;
-});
+serv.listen(2000);
+console.log("Server started.");
 
 var SOCKET_LIST = {};
 var PLAYER_LIST = {};
