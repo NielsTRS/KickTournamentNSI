@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'PixelFont';
+  src: url('/public/assets/fonts/pixel.ttf');
+}
+
+body {
+  font-family: 'PixelFont';
+}
+
+button {
+  font-size: 30px;
+}
+
+.menu {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-image: url('/public/assets/images/ui/menu.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+  opacity: 0.5;
+}
+
+.menu-quit {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 50px;
+  height: 50px;
+  background-image: url('/public/assets/images/ui/croix.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.menu-volume-div {
+  display: flex;
+  position: absolute;
+  top: 22.5%;
+  left: 15%;
+  width: 50%;
+}
+
+.menu-volume-img {
+  width: 10%;
+  height: 10%;
+  transform: translate(50%, -40%);
+}
+
+
+.menu-volume {
+  width: 50%;
+  height: 10px;
+  -webkit-appearance: none;
+  padding: 0;
+  outline: none;
+  opacity: .8;
+  background: #2c3e50;
+  transition: opacity .2s;
+  cursor: pointer;
+}
+
+.menu-actions-div {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  height: 40%;
+  width: 50%;
+}
+
+.menu-actions {
+  padding-bottom: 10px;
+  width: 100%;
+  height: 25%;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: ease-in 0.2s;
+  background-image: url('/public/assets/images/ui/button/normal.png')
+}
+
+.menu-actions:focus {
+  outline: none;
+}
+
+.menu-actions:hover {
+  transform: scaleX(1.1);
+  transition: ease-in 0.2s;
+  cursor: pointer;
+  background-image: url('/public/assets/images/ui/button/hover.png')
+}

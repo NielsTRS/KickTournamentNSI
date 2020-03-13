@@ -1,91 +1,106 @@
-var express = require('express');
-var app = express();
-var serv = require('http').createServer(app);
+var express = require('express')
+var app = new express();
+var http = require('http').createServer(app);
+var io = require('socket.io')(http, {});
+
+// Reception et envoi de données
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
+app.get('/game', function (req, res) {
+    res.sendFile(__dirname + '/public/game.html');
+});
 app.use('/public', express.static(__dirname + '/public'));
 
-serv.listen(2000);
-console.log("Server started.");
+http.listen(2000);
 
-var SOCKET_LIST = {};
-var PLAYER_LIST = {};
+console.log("Server started");
 
-var Player = function (id) {
-    var self = {
-        x: 250,
-        y: 250,
-        id: id,
-        width: 50,
-        height: 50,
-        number: "" + Math.floor(10 * Math.random()),
-        pressingRight: false,
-        pressingLeft: false,
-        pressingUp: false,
-        pressingDown: false,
-        maxSpd: 5,
-    };
-    self.updatePosition = function () {
-        if (self.pressingRight)
-            self.x += self.maxSpd;
-        if (self.pressingLeft)
-            self.x -= self.maxSpd;
-        if (self.pressingUp)
-            self.y -= self.maxSpd;
-        if (self.pressingDown)
-            self.y += self.maxSpd;
-    };
-    return self;
-};
-
-var io = require('socket.io')(serv, {});
 io.on('connection', function (socket) {
-    socket.id = Math.random();
-    SOCKET_LIST[socket.id] = socket;
+    console.log(`Nouvelle connexion ! ${socket.id}`);
 
-    var player = Player(socket.id);
-    PLAYER_LIST[socket.id] = player;
-
-    socket.on('disconnect', function () {
-        delete SOCKET_LIST[socket.id];
-        delete PLAYER_LIST[socket.id];
+    socket.on('start', function (data) {
+        console.log(`${socket.id} ${data.x} ${data.y}`);
+        var player = new Player(socket.id, data.x, data.y, data.w, data.h);
+        players_list.push(player)
     });
 
-    socket.on('keyPress', function (data) {
-        if (data.inputId === 'left')
-            player.pressingLeft = data.state;
-        else if (data.inputId === 'right')
-            player.pressingRight = data.state;
-        else if (data.inputId === 'up')
-            player.pressingUp = data.state;
-        else if (data.inputId === 'down')
-            player.pressingDown = data.state;
+    socket.on('update', function (data) {
+        var player = playerFind(socket, players_list);
+        try {
+            player.x = data.x;
+            player.y = data.y;
+            player.w = data.w;
+            player.h = data.h;
+            player.life = data.life;
+            player.isDead = data.dead;
+        } catch (err) {
+        }
+    });
+
+    socket.on('particle', function (data) {
+        io.sockets.emit('particles', data);
+    });
+
+    socket.on('attack', function (data) {
+        io.sockets.emit('sweeps', data);
+    });
+
+    socket.on('hit', function (data) {
+        io.sockets.emit('hit', data);
+    });
+
+    socket.on('death', function (data) {
+        var player = playerFind(data);
+        players_list.splice(players_list.indexOf(player), 1)
+    });
+
+    socket.on('disconnect', function () {
+        console.log(`${socket.id} s'est deconnecté.`);
+        var player = playerFind(socket, players_list);
+        io.sockets.emit('delete', players_list.indexOf(player));
+        io.sockets.emit('deconnection', socket.id);
+        players_list.splice(players_list.indexOf(player), 1);
     });
 
     socket.on('tchat', function (msg) {
         io.emit('tchat', msg);
     });
+
 });
 
-setInterval(function () {
-    var pack = [];
-    for (var i in PLAYER_LIST) {
-        var player = PLAYER_LIST[i];
-        player.updatePosition();
-        pack.push({
-            x: player.x,
-            y: player.y,
-            width: player.width,
-            height: player.height,
-            number: player.number
-        });
-    }
-    for (var i in SOCKET_LIST) {
-        var socket = SOCKET_LIST[i];
-        socket.emit('newPositions', pack);
-    }
 
+// Fonction pour trouver le socket
+function playerFind(socket, players_list) {
+    for (i in players_list) {
+        if (socket.id === players_list[i].id) {
+            return players_list[i];
+        }
+    }
+}
 
-}, 1000 / 60);
+// Tous les objets du jeu
+
+var players_list = [];
+var particles_list = [];
+
+var Player = function (id, x, y, w, h) {
+    var self = {
+        id: id,
+        x: x,
+        y: y,
+        w: w,
+        h: h
+    };
+    return self
+};
+
+setInterval(tick, 1000 / 60);
+
+function tick() {
+    /*for(player of players_list){
+
+    }*/
+    io.sockets.emit('tick', players_list)
+}

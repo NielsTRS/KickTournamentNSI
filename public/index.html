@@ -7,28 +7,30 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
     <link href="public/assets/styles/css/main.css" rel="stylesheet"/>
     <title>Kick Tournament</title>
+    <meta name="description"
+          content="Kick Tournament est un jeu de plateforme 2D où le but est de tuer ses adversaires tout en esquivant ses coups !"/>
 </head>
 <body>
 <div id="wrapper">
     <header id="header">
         <span class="logo"><img alt="Logo" src="public/assets/images/logo.png"/></span>
         <h1 class="title">Kick Tournament</h1>
-        <p>Description du jeu</p>
+        <p>Kick Tournament est un jeu de plateforme 2D où le but est de tuer ses adversaires tout en esquivant ses coups
+            !</p>
     </header>
 
     <div id="main">
         <section class="main special">
             <header class="major">
-                <h2>Jeu</h2>
+                <a href="/game"><h2>Jouer</h2></a>
             </header>
-            <canvas id="game"></canvas>
         </section>
         <section class="main">
             <h2>Tchatez avec d'autres joueurs</h2>
             <form action="#" method="post">
                 <div class="row gtr-uniform">
                     <div class="col-12">
-                        <input name="message" id="message" placeholder="Texte" type="text" value=""/>
+                        <input id="message" name="message" placeholder="Texte" type="text" value=""/>
                         <button class="primary">Envoyer</button>
                     </div>
                 </div>
@@ -45,12 +47,13 @@
     </div>
 
     <footer id="footer">
-        <p>Description de notre projet </p>
+        <p>Cette plateforme a été créé pour un projet de NSI</p>
     </footer>
 </div>
 </body>
 <script src="/socket.io/socket.io.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-<script src="public/assets/js/script.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="public/assets/js/chat.js"></script>
 </html>
