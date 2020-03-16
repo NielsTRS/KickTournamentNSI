@@ -12,20 +12,22 @@
 </head>
 <body>
 <div id="wrapper">
-    <header id="header">
-        <span class="logo"><img alt="Logo" src="public/assets/images/logo.png"/></span>
-        <h1 class="title">Kick Tournament</h1>
-        <p>Kick Tournament est un jeu de plateforme 2D où le but est de tuer ses adversaires tout en esquivant ses coups
-            !</p>
-    </header>
-
     <div id="main">
-        <section class="main special">
-            <header class="major">
-                <a href="/game"><h2>Jouer</h2></a>
+        <section class="main special" id="game_menu">
+            <header id="header">
+                <span class="logo"><img alt="Logo" src="public/assets/images/logo.png"/></span>
+                <h1 class="title">Kick Tournament</h1>
+                <p>Kick Tournament est un jeu de plateforme 2D où le but est de tuer ses adversaires tout en esquivant ses coups
+                    !</p>
             </header>
+            <nav>
+                <ul>
+                    <li><a href="/game" class="active">Jouer</a></li>
+                    <li><a href="#chat">Chatez</a></li>
+                </ul>
+            </nav>
         </section>
-        <section class="main">
+        <section class="main" id="chat">
             <h2>Chatez avec d'autres joueurs</h2>
             <form action="#" method="post">
                 <div class="row gtr-uniform">

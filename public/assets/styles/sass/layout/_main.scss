@@ -1,5 +1,10 @@
 /* Main */
 
+@font-face {
+  font-family: 'PixelFont';
+  src: url('/public/assets/fonts/pixel.ttf');
+}
+
 #main {
 
   background-color: _palette(invert, bg);
@@ -8,7 +13,7 @@
   border-radius: _size(border-radius-main);
 
   > .main {
-    @include padding(5em, 5em);
+    @include padding(7em, 5em);
     border-top: solid 1px _palette(invert, border);
 
     &:first-child {
@@ -26,9 +31,23 @@
     }
   }
 
-  #game {
-    border: 1px solid _palette(accent);
-    width: 100%;
+  > #game_menu {
+    background-image: url("/public/assets/images/background_game_menu.png");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: _palette(fg-bold);
+
+    ul > li > a {
+      font-family: 'PixelFont';
+      font-size: 60px;
+      color: _palette(game);
+
+      &:hover {
+        color: _palette(game-hover);
+      }
+    }
   }
 
   @include breakpoint('<=large') {
@@ -62,6 +81,11 @@
         width: calc(100% + 4em);
       }
     }
+    > #game_menu {
+      ul > li > a {
+        font-size: 40px;
+      }
+    }
   }
 
   @include breakpoint('<=xsmall') {
@@ -71,6 +95,11 @@
       > .image.main:first-child {
         margin: -3em 0 1.5em -1.5em;
         width: calc(100% + 3em);
+      }
+    }
+    > #game_menu {
+      ul > li > a {
+        font-size: 30px;
       }
     }
   }
@@ -89,6 +118,11 @@
         img {
           border-radius: 0;
         }
+      }
+    }
+    > #game_menu {
+      ul > li > a {
+        font-size: 20px;
       }
     }
   }
