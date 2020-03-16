@@ -1,28 +1,10 @@
-///
-/// Stellar by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Form */
 
 form {
   margin: 0 0 _size(element-margin) 0;
 }
 
-label {
-  display: block;
-  font-size: 0.9em;
-  font-weight: _font(weight-bold);
-  margin: 0 0 (_size(element-margin) * 0.5) 0;
-  color: _palette(invert, fg-bold);
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select,
-textarea {
+input[type="text"], textarea {
   appearance: none;
   border-radius: _size(border-radius);
   border: solid 1px _palette(invert, border);
@@ -34,111 +16,16 @@ textarea {
   width: 90%;
   background-color: _palette(invert, border-bg);
 
-  &:invalid {
-    box-shadow: none;
-  }
-
   &:focus {
     border-color: _palette(accent);
     box-shadow: 0 0 0 1px _palette(accent);
   }
 }
 
-select {
-  background-size: 1.25rem;
-  background-repeat: no-repeat;
-  background-position: calc(100% - 1rem) center;
-  height: _size(element-height);
-  padding-right: _size(element-height);
-  text-overflow: ellipsis;
-
-  option {
-    color: _palette(invert, fg-bold);
-    background: _palette(invert, bg);
-  }
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select {
+input[type="text"] {
   height: _size(element-height);
 }
 
 textarea {
   padding: 0.75em 1em;
-}
-
-input[type="checkbox"],
-input[type="radio"], {
-  appearance: none;
-  display: block;
-  float: left;
-  margin-right: -2em;
-  opacity: 0;
-  width: 1em;
-  z-index: -1;
-
-  & + label {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1em;
-    font-weight: _font(weight);
-    padding-left: (_size(element-height) * 0.6) + 0.75em;
-    padding-right: 0.75em;
-    position: relative;
-    color: _palette(invert, fg);
-
-    &:before {
-      border-radius: _size(border-radius);
-      content: '';
-      display: inline-block;
-      font-size: 0.8em;
-      height: (_size(element-height) * 0.75);
-      left: 0;
-      line-height: (_size(element-height) * 0.75);
-      position: absolute;
-      text-align: center;
-      top: 0;
-      width: (_size(element-height) * 0.75);
-      background: _palette(invert, border-bg);
-      border: 1px solid _palette(invert, border);
-    }
-  }
-
-  &:checked + label {
-    &:before {
-      content: '\f00c';
-      background-color: _palette(invert, fg-bold);
-      border-color: _palette(invert, fg-bold);
-      color: _palette(invert, bg);
-    }
-  }
-
-  &:focus + label {
-    &:before {
-      border-color: _palette(accent);
-      box-shadow: 0 0 0 1px _palette(accent);
-    }
-  }
-
-  .formerize-placeholder {
-    color: _palette(invert, fg-light) !important;
-  }
-}
-
-input[type="checkbox"] {
-  & + label {
-    &:before {
-      border-radius: _size(border-radius);
-    }
-  }
-}
-
-input[type="radio"] {
-  & + label {
-    &:before {
-      border-radius: 100%;
-    }
-  }
 }

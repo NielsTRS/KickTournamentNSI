@@ -14,6 +14,7 @@
         xxsmall: (null, 360px)
 ));
 
+
 // Base
 @import 'base/reset';
 @import 'base/page';
@@ -21,11 +22,8 @@
 
 // Component
 @import 'components/row';
-@import 'components/box';
 @import 'components/button';
 @import 'components/form';
-@import 'components/image';
-@import 'components/actions';
 @import 'components/section';
 @import 'components/list';
 

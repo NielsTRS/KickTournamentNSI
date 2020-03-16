@@ -1,16 +1,6 @@
-///
-/// Stellar by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Button */
 
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button,
-.button {
+button {
   appearance: none;
   transition: background-color _duration(transition) ease-in-out, color _duration(transition) ease-in-out;
   border-radius: _size(border-radius);
@@ -33,22 +23,6 @@ button,
     background-color: _palette(invert, border-bg);
   }
 
-  &:active {
-    background-color: _palette(invert, border2-bg);
-  }
-
-  &.fit {
-    width: 100%;
-  }
-
-  &.small {
-    font-size: 0.8em;
-  }
-
-  &.large {
-    font-size: 1.35em;
-  }
-
   &.primary {
     background-color: _palette(accent);
     color: _palette(invert, bg) !important;
@@ -57,22 +31,6 @@ button,
     &:hover {
       background-color: lighten(_palette(accent), 3);
     }
-
-    &:active {
-      background-color: darken(_palette(accent), 3);
-    }
-
-    &.icon {
-      &:before {
-        color: _palette(invert, bg) !important;
-      }
-    }
-  }
-
-  &.disabled,
-  &:disabled {
-    pointer-events: none;
-    opacity: 0.25;
   }
 
   @include breakpoint('<=small') {

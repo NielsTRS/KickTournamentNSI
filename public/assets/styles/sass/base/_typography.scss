@@ -2,11 +2,11 @@ body {
   color: _palette(fg);
 }
 
-input, select, textarea {
+input {
   color: _palette(invert, fg-bold);
 }
 
-body, input, select, textarea {
+body, input {
   font-family: _font(family);
   font-size: 17pt;
   font-weight: _font(weight);
@@ -37,15 +37,6 @@ a {
   }
 }
 
-strong, b {
-  font-weight: _font(weight-bold);
-  color: _palette(invert, fg-bold);
-}
-
-em, i {
-  font-style: italic;
-}
-
 p {
   margin: 0 0 _size(element-margin) 0;
 
@@ -56,7 +47,7 @@ p {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   color: _palette(invert, fg-bold);
   font-weight: _font(weight);
   line-height: 1.5;
@@ -82,68 +73,12 @@ h3 {
   font-size: 1.25em;
 }
 
-h4 {
-  font-size: 1.1em;
-}
-
-h5 {
-  font-size: 0.9em;
-}
-
-h6 {
-  font-size: 0.7em;
-}
-
 @include breakpoint('<=small') {
   h1 {
     font-size: 2em;
   }
 }
 
-sub {
-  font-size: 0.8em;
-  position: relative;
-  top: 0.5em;
-}
-
-sup {
-  font-size: 0.8em;
-  position: relative;
-  top: -0.5em;
-}
-
-blockquote {
-  border-left: solid 4px;
-  border-left-color: _palette(invert, border);
-  font-style: italic;
-  margin: 0 0 _size(element-margin) 0;
-  padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
-}
-
-code {
-  border-radius: _size(border-radius);
-  border: solid 1px;
-  font-family: _font(family-fixed);
-  font-size: 0.9em;
-  margin: 0 0.25em;
-  padding: 0.25em 0.65em;
-  background: _palette(invert, border-bg);
-  border-color: _palette(invert, border);
-}
-
-pre {
-  -webkit-overflow-scrolling: touch;
-  font-family: _font(family-fixed);
-  font-size: 0.9em;
-  margin: 0 0 _size(element-margin) 0;
-
-  code {
-    display: block;
-    line-height: 1.75;
-    padding: 1em 1.5em;
-    overflow-x: auto;
-  }
-}
 
 hr {
   border: 0;
@@ -154,18 +89,6 @@ hr {
   &.major {
     margin: (_size(element-margin) * 1.5) 0;
   }
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-center {
-  text-align: center;
-}
-
-.align-right {
-  text-align: right;
 }
 
 .title {

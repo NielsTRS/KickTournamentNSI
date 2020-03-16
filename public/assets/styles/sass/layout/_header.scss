@@ -13,33 +13,6 @@
     letter-spacing: _font(letter-spacing);
   }
 
-  &.alt {
-    @include padding(6em, 5em, (1em, 0, 0, 0));
-
-    h1 {
-      font-size: 3.25em;
-    }
-
-    > * {
-      transition: opacity 3s ease;
-      transition-delay: 0.5s;
-      opacity: 1;
-    }
-
-    .logo {
-      transition: opacity 1.25s ease, transform 0.5s ease;
-      transition-delay: 0s;
-      display: block;
-      margin: 0 0 (_size(element-margin) * 0.75) 0;
-
-      img {
-        display: block;
-        margin: 0 auto;
-        max-width: 75%;
-      }
-    }
-  }
-
   @include breakpoint('<=large') {
     @include padding(4em, 4em, (0, 0, -2em, 0));
 
@@ -62,10 +35,6 @@
     p {
       font-size: 1em;
       letter-spacing: 0;
-
-      br {
-        display: none;
-      }
     }
 
     &.alt {
@@ -90,18 +59,6 @@
 
     &.alt {
       @include padding(2.5em, 1em, (1em, 0, 0, 0));
-    }
-  }
-
-  body.is-preload & {
-    &.alt {
-      > * {
-        opacity: 0;
-      }
-
-      .logo {
-        transform: scale(0.8) rotate(-30deg);
-      }
     }
   }
 }
