@@ -1330,6 +1330,9 @@ footer.major {
   font-size: 1.25em;
   letter-spacing: -0.025em;
 }
+#header .logo img {
+  width: 300px;
+}
 @media screen and (max-width: 1280px) {
   #header {
     padding: 4em 4em 0.1em 4em ;
@@ -1344,6 +1347,9 @@ footer.major {
   }
   #header.alt {
     padding: 5em 3em 2em 3em ;
+  }
+  #header .logo img {
+    width: 250px;
   }
 }
 @media screen and (max-width: 736px) {
@@ -1360,6 +1366,9 @@ footer.major {
   #header.alt h1 {
     font-size: 2.5em;
   }
+  #header .logo img {
+    width: 200px;
+  }
 }
 @media screen and (max-width: 480px) {
   #header {
@@ -1368,6 +1377,9 @@ footer.major {
   #header.alt {
     padding: 4em 1.5em 1em 1.5em ;
   }
+  #header .logo img {
+    width: 150px;
+  }
 }
 @media screen and (max-width: 360px) {
   #header {
@@ -1375,6 +1387,9 @@ footer.major {
   }
   #header.alt {
     padding: 3.5em 1em 0.5em 1em ;
+  }
+  #header .logo img {
+    width: 100px;
   }
 }
 
