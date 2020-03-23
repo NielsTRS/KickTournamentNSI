@@ -6,7 +6,7 @@ installez nodejs avec ces commandes (debian) :
 - curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 - sudo apt install nodejs
 
-Allez dans le répertoire du dépot puis lancez le commande :
+Allez dans le répertoire du dépot puis lancez la commande :
 - npm install
 
 ## Lancer le serveur
