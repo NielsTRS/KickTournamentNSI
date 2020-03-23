@@ -81,7 +81,6 @@ function playerFind(socket, players_list) {
 // Tous les objets du jeu
 
 var players_list = [];
-var particles_list = [];
 
 var Player = function (id, x, y, w, h) {
     var self = {
