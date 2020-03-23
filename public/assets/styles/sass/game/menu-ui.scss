@@ -18,7 +18,7 @@ button {
   left: 50%;
   width: 1000px;
   height: 500px;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   /*background-color: rgba(155, 89, 182,0.25); */
   background-image: url('/public/assets/images/ui/menu.png');
   background-repeat: no-repeat;
@@ -51,7 +51,7 @@ button {
 .menu-volume-img {
   width: 10%;
   height: 10%;
-  transform: translate(50%,-40%);
+  transform: translate(50%, -40%);
 }
 
 
@@ -79,9 +79,22 @@ button {
   font-size: 30px;
 }
 
-#effect-down {padding-left: 20px;cursor:pointer;user-select:none;}
-.effect-value {padding-left: 20px;user-select:none;}
-#effect-up {padding-left: 20px;cursor:pointer;user-select:none;}
+#effect-down {
+  padding-left: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.effect-value {
+  padding-left: 20px;
+  user-select: none;
+}
+
+#effect-up {
+  padding-left: 20px;
+  cursor: pointer;
+  user-select: none;
+}
 
 .effect-change:hover {
   transition: ease-in 0.1s;
@@ -116,7 +129,10 @@ button {
   background-image: url('/public/assets/images/ui/button/normal.png')
 }
 
-.menu-actions:focus {outline: none;}
+.menu-actions:focus {
+  outline: none;
+}
+
 .menu-actions:hover {
   transform: scaleX(1.05);
   transition: ease-in 0.2s;
@@ -148,7 +164,11 @@ button {
   transition: ease-out 0.2s;
   cursor: pointer;
 }
-.keys-key:focus {outline: none;}
+
+.keys-key:focus {
+  outline: none;
+}
+
 .keys-key:hover {
   transition: ease-in 0.2s;
   color: white;

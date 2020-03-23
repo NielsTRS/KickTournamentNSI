@@ -1,4 +1,4 @@
-var express = require('express')
+var express = require('express');
 var app = new express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http, {});
@@ -18,7 +18,6 @@ http.listen(2000);
 console.log("Server started");
 
 io.on('connection', function (socket) {
-    console.log(`Nouvelle connexion ! ${socket.id}`);
 
     socket.on('start', function (data) {
         console.log(`${socket.id} ${data.x} ${data.y}`);
@@ -57,7 +56,6 @@ io.on('connection', function (socket) {
     });
 
     socket.on('disconnect', function () {
-        console.log(`${socket.id} s'est deconnecté.`);
         var player = playerFind(socket, players_list);
         io.sockets.emit('delete', players_list.indexOf(player));
         io.sockets.emit('deconnection', socket.id);
@@ -99,8 +97,5 @@ var Player = function (id, x, y, w, h) {
 setInterval(tick, 1000 / 60);
 
 function tick() {
-    /*for(player of players_list){
-
-    }*/
     io.sockets.emit('tick', players_list)
 }
