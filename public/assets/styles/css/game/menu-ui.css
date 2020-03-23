@@ -1,100 +1,158 @@
 @font-face {
-  font-family: 'PixelFont';
-  src: url("/public/assets/fonts/pixel.ttf");
+	font-family: 'PixelFont';
+	src: url('fonts/pixel.ttf');
 }
+
 body {
-  font-family: 'PixelFont';
+	font-family: 'PixelFont';
 }
 
 button {
-  font-size: 30px;
+	font-family: 'PixelFont';
+	font-size: 30;
 }
 
 .menu {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
-  background-image: url("/public/assets/images/ui/menu.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  -ms-interpolation-mode: nearest-neighbor;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: pixelated;
-  opacity: 0.5;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1000px;
+	height: 500px;
+	transform: translate(-50%,-50%);
+	/*background-color: rgba(155, 89, 182,0.25); */
+	background-image: url('./img/ui/menu.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 .menu-quit {
-  position: absolute;
-  top: 20%;
-  right: 15%;
-  width: 50px;
-  height: 50px;
-  background-image: url("/public/assets/images/ui/croix.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  cursor: pointer;
+	position: absolute;
+	top: 10%;
+	left: 100%;
+	width: 50px;
+	height: 50px;
+	transform: translateX(-200%);
+	background-image: url('./img/ui/croix.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
 }
 
 .menu-volume-div {
-  display: -webkit-box;
-  display: flex;
-  position: absolute;
-  top: 22.5%;
-  left: 15%;
-  width: 50%;
+	display: flex;
+	position: absolute;
+	top: 22.5%;
+	left: 0;
+	transform: translate(12.5%);
+	width: 50%;
 }
 
+/*speaker icon by 'those-icons' on flaticon.com & and mute icon by 'Pixel perfect' on flaticon.com */
 .menu-volume-img {
-  width: 10%;
-  height: 10%;
-  -webkit-transform: translate(50%, -40%);
-          transform: translate(50%, -40%);
+	width: 10%;
+	height: 10%;
+	transform: translate(50%,-40%);
 }
+
 
 .menu-volume {
-  width: 50%;
-  height: 10px;
-  -webkit-appearance: none;
-  padding: 0;
-  outline: none;
-  opacity: .8;
-  background: #2c3e50;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  cursor: pointer;
+	width: 50%;
+	height: 10px;
+	-webkit-appearance: none;
+	padding: 0;
+	outline: none;
+	opacity: .8;
+	background: #2c3e50;
+	transition: opacity .2s;
+	cursor: pointer;
+}
+
+
+.menu-effect-div {
+	position: absolute;
+	display: flex;
+	top: 30%;
+	left: 0;
+	height: 40%;
+	width: 50%;
+	transform: translateX(12.5%);
+	font-size: 30px;
+}
+
+#effect-down {padding-left: 20px;cursor:pointer;user-select:none;}
+.effect-value {padding-left: 20px;user-select:none;}
+#effect-up {padding-left: 20px;cursor:pointer;user-select:none;}
+
+.effect-change:hover {
+	transition: ease-in 0.1s;
+	color: black;
+}
+
+.effect-change:hover {
+	transition: ease-in 0.1s;
+	color: red;
+	font-weight: 10px;
 }
 
 .menu-actions-div {
-  position: absolute;
-  top: 35%;
-  left: 15%;
-  height: 40%;
-  width: 50%;
+	position: absolute;
+	top: 40%;
+	right: 0;
+	height: 50%;
+	width: 40%;
+	transform: translateX(-25%);
+	/*background-color: black;*/
 }
 
 .menu-actions {
-  padding-bottom: 10px;
-  width: 100%;
-  height: 25%;
-  border: none;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  -webkit-transition: ease-in 0.2s;
-  transition: ease-in 0.2s;
-  background-image: url("/public/assets/images/ui/button/normal.png");
+	padding-bottom: 10px;
+	margin-top: 5px;
+	width: 100%;
+	height: 25%;
+	border: none;
+	background: none;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	transition: ease-in 0.2s;
+	background-image: url('./img/ui/button/normal.png')
 }
 
-.menu-actions:focus {
-  outline: none;
-}
-
+.menu-actions:focus {outline: none;}
 .menu-actions:hover {
-  -webkit-transform: scaleX(1.1);
-          transform: scaleX(1.1);
-  -webkit-transition: ease-in 0.2s;
-  transition: ease-in 0.2s;
-  cursor: pointer;
-  background-image: url("/public/assets/images/ui/button/hover.png");
+	transform: scaleX(1.05);
+	transition: ease-in 0.2s;
+	cursor: pointer;
+	background-image: url('./img/ui/button/hover.png')
+}
+
+.keys-menu {
+	position: absolute;
+	width: 40%;
+	height: 40%;
+	left: 0;
+	top: 40%;
+	transform: translateX(15%);
+}
+
+.keys-key {
+	width: 100%;
+	height: 33%;
+	font-size: 30;
+	margin-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	border: none;
+	background: none;
+	background-repeat: no-repeat;
+	background-image: url('./img/ui/button/keyHover.png');
+	background-size: 100% 100%;
+	color: black;
+	transition: ease-out 0.2s;
+	cursor: pointer;
+}
+.keys-key:focus {outline: none;}
+.keys-key:hover {
+	transition: ease-in 0.2s;
+	color: white;
+	background-image: url('./img/ui/button/key.png');
 }
