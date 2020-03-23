@@ -1,7 +1,7 @@
 let ambientMusic;
 function preload(){
 	try{loadImages()}catch(err){};
-	ambientMusic = createAudio('sound/ambient_music.mp3', soundLoaded)
+	ambientMusic = createAudio('/public/assets/sound/ambient_music.mp3', soundLoaded)
 	// disconnect = loadSound('disconnect.wav')
 }
 
@@ -60,7 +60,7 @@ function draw(){
 		canvas = document.getElementsByClassName('p5Canvas')
 		canvas[0].style.cursor = "pointer";
 		d = true;
-		try{playSound('sound/death.wav',volume)}catch(err){}
+		try{playSound('/public/assets/sound/death.wav',volume)}catch(err){}
 		socket.emit('death', player.id)
 		deathUi();
 	}

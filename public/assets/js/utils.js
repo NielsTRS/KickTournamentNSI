@@ -20,15 +20,15 @@ let pixelFont;
 let volume = 0.5;
 
 function loadImages(){
-	alucard = loadImage('img/alucard.png')
-  bloodborn = loadImage('img/bloodborn.png')
-	sweepLeft = loadImage('img/sprite-left.png')
-	sweepRight = loadImage('img/sprite-right.png')
-	skull = loadImage('img/skull.png')
-	parchment = loadImage('img/ui/parchment.png')
-	dialog = loadImage('img/ui/dialog.png')
-	display = loadImage('img/ui/display.png')
-	pixelFont = loadFont('fonts/pixel.ttf')
+	alucard = loadImage('/public/assets/images/alucard.png')
+  bloodborn = loadImage('/public/assets/images/bloodborn.png')
+	sweepLeft = loadImage('/public/assets/images/sprite-left.png')
+	sweepRight = loadImage('/public/assets/images/sprite-right.png')
+	skull = loadImage('/public/assets/images/skull.png')
+	parchment = loadImage('/public/assets/images/ui/parchment.png')
+	dialog = loadImage('/public/assets/images/ui/dialog.png')
+	display = loadImage('/public/assets/images/ui/display.png')
+	pixelFont = loadFont('/public/assets/fonts/pixel.ttf')
 }
 
 function setCookie(cname,cvalue,exdays) {

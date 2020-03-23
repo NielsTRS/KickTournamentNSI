@@ -39,7 +39,7 @@ let upVolume;
 // let div = null;
 function menuUi(){
 	if(!menuOpened){ //Ouverture du menu
-		try{playSound('/sound/confirm.wav',volume)}catch(err){}
+		try{playSound('/public/assets/sound/confirm.wav',volume)}catch(err){}
 		menuOpened = true;
 		div = createDiv('')
 		div.addClass('ui')
@@ -64,9 +64,9 @@ function menuUi(){
 		slider.mouseMoved(function(){
 			changeImage(slider)
 		})
-		slider.mouseReleased(function(){playSound('/sound/bit.wav',sound)})
+		slider.mouseReleased(function(){playSound('/public/assets/sound/bit.wav',sound)})
 
-		volumeImg = createImg('../img/ui/volume/3.png', '')
+		volumeImg = createImg('/public/assets/images/ui/volume/3.png', '')
 		changeImage(slider)
 		volumeImg.addClass('menu-volume-img')
 		volumeImg.parent(volumeDiv)
@@ -152,7 +152,7 @@ function menuUi(){
 
 	} else {
 		menuOpened = false;
-		try{playSound('/sound/cancel.wav',volume)}catch(err){}
+		try{playSound('//public/assets/sound/cancel.wav',volume)}catch(err){}
 		try{replay.remove()}catch(err){}
 		disconnect.remove()
 		actionsDiv.remove()
@@ -179,7 +179,7 @@ function changeEffectVolume(i){
 	volume = parseFloat(volume.toFixed(1))
 	setCookie("volume",volume,100000);
 	effectValue.html(volume*100 + "%", false)
-	try{playSound('/sound/bit.wav',volume)}catch(err){}
+	try{playSound('/public/assets/sound/bit.wav',volume)}catch(err){}
 	// console.log(i)
 }
 
@@ -199,12 +199,12 @@ function changeImage(slider){
 	ambientMusic.volume(sound);
 	setCookie("sound", sound, 2);
 	if(sound <= 1 && sound > 2/3){
-		volumeImg.attribute('src', '../img/ui/volume/3.png')
+		volumeImg.attribute('src', '/public/assets/images/ui/volume/3.png')
 	} else if(sound <= 2/3 && sound > 1/3){
-		volumeImg.attribute('src', '../img/ui/volume/2.png')
+		volumeImg.attribute('src', '/public/assets/images/ui/volume/2.png')
 	} else if(sound <= 1/3 && sound > 0){
-		volumeImg.attribute('src', '../img/ui/volume/1.png')
+		volumeImg.attribute('src', '/public/assets/images/ui/volume/1.png')
 	} else {
-		volumeImg.attribute('src', '../img/ui/volume/mute.png')
+		volumeImg.attribute('src', '/public/assets/images/ui/volume/mute.png')
 	}
 }

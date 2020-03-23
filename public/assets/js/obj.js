@@ -56,7 +56,7 @@ class Player {
 
 	jump(){
 		if(this.jumps.count > 0){
-			try{playSound('sound/jump.wav',volume)}catch(err){}
+			try{playSound('/public/assets/sound/jump.wav',volume)}catch(err){}
 			this.jumps.count--;
 			this.vy = -5;
 		}

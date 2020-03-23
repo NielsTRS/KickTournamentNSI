@@ -14,12 +14,12 @@ function eventsHandler(socket){
 
 	socket.on('hit', function(data){
 		if(socket.id == data.hitter){
-			try{playSound('sound/hit.wav',volume)}catch(err){}
+			try{playSound('/public/assets/sound/hit.wav',volume)}catch(err){}
 			console.log(`Vous avez touché ${data.hitted}: -${data.damage} PV`)
 		} else if(socket.id == data.hitted){
 			console.log(`Vous avez été touché par ${data.hitter}: -${data.damage} PV`)
 			player.life -= data.damage;
-			try{playSound('sound/hurt.wav',volume)}catch(err){}
+			try{playSound('/public/assets/sound/hurt.wav',volume)}catch(err){}
 		}
 	})
 
@@ -28,7 +28,7 @@ function eventsHandler(socket){
 	})
 
 	socket.on('deconnection', function(data){
-		try{playSound('sound/cancel.wav',volume)}catch(err){}
+		try{playSound('/public/assets/sound/cancel.wav',volume)}catch(err){}
 		// disconnect.play()
 		deconnections.push({txt: data + " s'est déconnecté.", life: 500, color: rndmKey(colors)})
 	})
@@ -50,7 +50,7 @@ function keyReleased(){
 
 function mousePressed(){
 	if(mouseButton == "left" && !player.death() && !menuOpened){
-		try{playSound('sound/sweep.wav',volume)}catch(err){}
+		try{playSound('/public/assets/sound/sweep.wav',volume)}catch(err){}
 		distance = (player.x+player.w/2) - mouseX
 		for(i of players){
 			point(mouseX, mouseY)
