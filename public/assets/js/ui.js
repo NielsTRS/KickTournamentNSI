@@ -4,26 +4,6 @@ function deathUi() {
     deathText = createDiv('Vous êtes mort')
     deathText.addClass('ui')
     deathText.addClass('deathText')
-    /*Text.width = textWidth(Text.src)
-
-    ImageSkull = {
-        x: width/2-Text.width/2-Text.width*0.05,
-        y: height/2-Text.size/2-Text.size*0.65,
-        width: Text.width+Text.width*0.1,
-        height: Text.size*2.5,
-    }
-
-    t = Text.size/4
-    noSmooth()
-    image(skull,width/2-t*15/2,height/2-ImageSkull.height-(t*15/3),t*15,t*16,0,0,15,16)
-    image(parchment,ImageSkull.x-9*9,ImageSkull.y,9*9,ImageSkull.height,0,0,9,26)
-    image(parchment,ImageSkull.x+ImageSkull.width,ImageSkull.y,9*9,ImageSkull.height,55,0,9,26)
-    image(parchment,ImageSkull.x,ImageSkull.y,ImageSkull.width,ImageSkull.height,9,0,46,26)
-
-    fill(0)
-    textFont(pixelFont)
-    textSize(Text.size)
-    text(Text.src,width/2-Text.width/2,height/2+Text.size/4)*/
 }
 
 let deathOpened;
@@ -31,12 +11,6 @@ let menuOpened;
 let downVolume;
 let upVolume;
 
-/*setInterval(function(){
-	try{downVolume.addEventListener('click', changeEffectVolume(-0.1))}catch(err){}
-	try{upVolume.addEventListener('click', changeEffectVolume(0.1))}catch(err){}
-}, 1000/10)*/
-
-// let div = null;
 function menuUi() {
     if (!menuOpened) { //Ouverture du menu
         try {
@@ -121,14 +95,7 @@ function menuUi() {
         keyRight.mousePressed(function () {
             changeControl("right")
         })
-
-        /*let saut = getCookie("jump");
-        if(saut == " ") saut = "espace"
-        keySpace = createButton("Saut (" + saut + ")")
-        keySpace.parent(keys)
-        keySpace.addClass('keys-key')
-        keySpace.addClass('keys-jump')*/
-
+	    
         actionsDiv = createDiv()
         actionsDiv.parent(div)
         actionsDiv.addClass('menu-actions-div')
@@ -169,7 +136,7 @@ function menuUi() {
     } else {
         menuOpened = false;
         try {
-            playSound('//public/assets/sound/cancel.wav', volume)
+            playSound('/public/assets/sound/cancel.wav', volume)
         } catch (err) {
         }
         try {
