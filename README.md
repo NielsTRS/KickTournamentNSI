@@ -27,6 +27,6 @@ Vous pouvez retrouver dans le dossier public/assets/styles/sass tout les fichier
 Le site est plutôt simple niveau pages web. En effet, il y a une page d'accueil (index.html) qui permet de présenter brièvement le jeu, puis une deuxième page web (game.html) qui nous donne l'interface qui nous permet de jouer avec d'autres joueurs (c'est un jeu multi-joueurs).
 
 ### Création du chat (nodeJS + jQuery)
-Pour le chat, j'ai utilisé un event via Socket.io qui permet de synchroniser le serveur NodeJS et le client. J'ai également décidé d'utiliser jQuery pour afficher dynamiquement les messages entre joueurs.
+Pour le chat, j'ai utilisé un event via Socket.io qui permet de synchroniser le serveur NodeJS et le client. J'ai également décidé d'utiliser jQuery (c'est une bibliothèque Javascript permettant de simplfier et de rendre plus efficace nos codes) pour afficher dynamiquement les messages entre joueurs.
 
 ## Partie Maël
