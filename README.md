@@ -24,7 +24,7 @@ Allez dans le répertoire du dépot puis lancez la commande :
 - node app.js
 
 ### Accéder au site
-Vous pouvez maintenant accéder au jeu en démarrant votre navigateur web et allez à l'adressee : http://127.0.0.1:2000
+Vous pouvez maintenant accéder au jeu en démarrant votre navigateur web et allez à l'adresse : http://127.0.0.1:2000
 
 ### Création du design
 Pour ce projet, j'ai encore une fois utilisé la technologie de SASS via le framework Compass.
