@@ -62,8 +62,10 @@ io.on('connection', function (socket) {
         players_list.splice(players_list.indexOf(player), 1);
     });
 
-    socket.on('tchat', function (msg) {
-        io.emit('tchat', msg);
+    let id = socket.id;
+    console.log(socket.id)
+    socket.on('tchat', function (msg,id) {
+        io.emit('tchat', msg, id);
     });
 
 });
