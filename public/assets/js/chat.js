@@ -7,6 +7,6 @@ $(function () {
         return false;
     });
     socket.on('tchat', function (msg, id) {
-        $('#messages').prepend($('<li>').text(id + ":" + msg));
+        $('#messages').prepend($('<li>').text(id + ": " + msg));
     });
 });
