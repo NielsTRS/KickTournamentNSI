@@ -1,5 +1,5 @@
 # Kick Tournament
-projet nsi
+Kick Tournament est un jeu de plateforme 2D où le but est de tuer ses adversaires tout en esquivant leurs coups !
 
 ## Comment jouer ?
 Cliquez pour attaquer.
@@ -22,7 +22,9 @@ Allez dans le répertoire du dépot puis lancez la commande :
 
 ### Lancer le serveur
 - node app.js
-Vous pouvez maintenant accéder au jeu avec l'adresse : http://127.0.0.1:2000
+
+### Accéder au site
+Vous pouvez maintenant accéder au jeu en démarrant votre navigateur web et allez à l'adressee : http://127.0.0.1:2000
 
 ### Création du design
 Pour ce projet, j'ai encore une fois utilisé la technologie de SASS via le framework Compass.
