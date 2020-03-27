@@ -2,7 +2,7 @@ $(function () {
     var socket = io();
     $('form').submit(function (e) {
         e.preventDefault(); // prevents page reloading
-        socket.emit('tchat', $('#message').val(), socket.id);
+        socket.emit('chat', $('#message').val(), socket.id);
         $('#message').val('');
         return false;
     });

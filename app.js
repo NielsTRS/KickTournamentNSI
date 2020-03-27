@@ -64,8 +64,8 @@ io.on('connection', function (socket) {
 
     let id = socket.id;
     console.log(socket.id)
-    socket.on('tchat', function (msg,id) {
-        io.emit('tchat', msg, id);
+    socket.on('chat', function (msg,id) {
+        io.emit('chat', msg, id);
     });
 
 });

@@ -95,7 +95,7 @@ function menuUi() {
         keyRight.mousePressed(function () {
             changeControl("right")
         })
-	    
+
         actionsDiv = createDiv()
         actionsDiv.parent(div)
         actionsDiv.addClass('menu-actions-div')
