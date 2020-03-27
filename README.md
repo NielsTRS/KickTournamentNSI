@@ -6,11 +6,6 @@ Cliquez pour attaquer.
 Utilisez A et D pour vous déplacer, ESPACE pour sauter.
 Echap. pour ouvrir le menu, et paramétrer les options.
 
-## Comment jouer ?
-Cliquez pour attaquer.
-Utilisez A et D pour vous déplacer, ESPACE pour sauter.
-Echap. pour ouvrir le menu, et paramétrer les options.
-
 ## Partie de Niels
 
 ### Installation du serveur NodeJS
