@@ -37,14 +37,14 @@ let pixelFont;
 let volume = 0.5;
 
 function loadImages() {
-    alucard = loadImage('/public/assets/images/alucard.png')
-    bloodborn = loadImage('/public/assets/images/bloodborn.png')
-    sweepLeft = loadImage('/public/assets/images/sprite-left.png')
-    sweepRight = loadImage('/public/assets/images/sprite-right.png')
-    skull = loadImage('/public/assets/images/skull.png')
-    parchment = loadImage('/public/assets/images/ui/parchment.png')
-    dialog = loadImage('/public/assets/images/ui/dialog.png')
-    display = loadImage('/public/assets/images/ui/display.png')
+    alucard = loadImage('/public/assets/images/alucard.png');
+    bloodborn = loadImage('/public/assets/images/bloodborn.png');
+    sweepLeft = loadImage('/public/assets/images/sprite-left.png');
+    sweepRight = loadImage('/public/assets/images/sprite-right.png');
+    skull = loadImage('/public/assets/images/skull.png');
+    parchment = loadImage('/public/assets/images/ui/parchment.png');
+    dialog = loadImage('/public/assets/images/ui/dialog.png');
+    display = loadImage('/public/assets/images/ui/display.png');
     pixelFont = loadFont('/public/assets/fonts/pixel.ttf')
 }
 
@@ -61,10 +61,10 @@ function getCookie(cname) {
     var ca = decodedCookie.split(';');
     for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) === ' ') {
             c = c.substring(1);
         }
-        if (c.indexOf(name) == 0) {
+        if (c.indexOf(name) === 0) {
             return c.substring(name.length, c.length);
         }
     }

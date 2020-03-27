@@ -11,9 +11,9 @@ var colors = {
     blue: 'rgba(52, 152, 219,1.0)',
     purple: 'rgba(155, 89, 182,1.0)',
     white: 'rgba(236, 240, 241,1.0)'
-}
+};
 var Floor = 200;
-var Screen = {x: 1000, y: 500, bx: 1920, by: 1080}
+var Screen = {x: 1000, y: 500, bx: 1920, by: 1080};
 let d = false;
 let deathTitle;
 
@@ -43,14 +43,14 @@ class Player {
         }
         if (this.left && !this.right) {
             this.x -= this.speed;
-            this.pvx = this.speed * 1 / 20;
+            this.pvx = this.speed / 20;
         }
-        if (this.y == Screen.y - this.h - Floor / 2 && !this.lockSound) {
-            this.jumps.count = 2
+        if (this.y === Screen.y - this.h - Floor / 2 && !this.lockSound) {
+            this.jumps.count = 2;
             this.lockSound = true;
         }
         ;
-        if (this.y != Screen.y - this.h - Floor / 2) this.lockSound = false;
+        if (this.y !== Screen.y - this.h - Floor / 2) this.lockSound = false;
         this.y += this.vy;
         this.vy += this.gravity;
     }
@@ -74,19 +74,19 @@ class Player {
     show() {
         fill(255);
         // ellipse(this.x+this.w/2, this.y+this.h/2, this.w, this.h);
-        image(this.img, this.x, this.y, this.w, this.h)
-        fill(149, 165, 166)
-        rect(this.x, this.y - 20, this.w, 5)
-        if (this.life > 0) fill(colors.red)
-        if (this.life > this.totalLife / 4 * 1) fill(colors.orange)
-        if (this.life > this.totalLife / 4 * 2) fill(colors.yellow)
-        if (this.life > this.totalLife / 4 * 3) fill(colors.green)
+        image(this.img, this.x, this.y, this.w, this.h);
+        fill(149, 165, 166);
+        rect(this.x, this.y - 20, this.w, 5);
+        if (this.life > 0) fill(colors.red);
+        if (this.life > this.totalLife / 4) fill(colors.orange);
+        if (this.life > this.totalLife / 4 * 2) fill(colors.yellow);
+        if (this.life > this.totalLife / 4 * 3) fill(colors.green);
         rect(this.x, this.y - 20, this.life / 100 * this.w, 5)
 
     }
 
     death() {
-        return this.life <= 0 ? true : false
+        return this.life <= 0
     }
 }
 
@@ -103,14 +103,13 @@ class Particle {
     }
 
     update() {
-        this.x += this.vx
+        this.x += this.vx;
         this.opacity -= this.o / this.lifeTime;
     }
 
     show() {
-        // this.a += 2;
-        noStroke()
-        fill('rgba(0, 0, 0,' + this.opacity + ')')
+        noStroke();
+        fill('rgba(0, 0, 0,' + this.opacity + ')');
         rect(this.x, this.y, this.r, this.r)
     }
 }
